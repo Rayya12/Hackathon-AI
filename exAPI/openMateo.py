@@ -24,4 +24,10 @@ def get_weather_data(lat: float, lon: float):
     rainfall = data["daily"]["precipitation_sum"]         # List[float] 30 nilai
     humidity = data["hourly"]["relative_humidity_2m"]     # List[float] 720 nilai
     
+    print(temperature)
+    print(humidity)
+    print(rainfall)
+    
     return temperature, humidity, rainfall
+
+get_weather_data(-6.917464,107.619125)
