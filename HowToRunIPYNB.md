@@ -28,5 +28,4 @@
    ```
 
 ## Menjalankan Project
-
 Buka `main.ipynb` menggunakan Jupyter Notebook atau VS Code, lalu pilih kernel `nama_env` yang sudah dibuat.
