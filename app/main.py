@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 import joblib
+from app.helper.return_avg_rain_temp_humid import return_avg_rain_temp_and_humid
 from app.schema.inputSchema import InputData
 from app.schema.outputSchema import OutputData
 import numpy as np
 import pandas as pd
+from app.helper.return_avg_nitrogen_and_Ph import return_avg_nitrogen_and_Ph
 
 
 app = FastAPI()
@@ -17,16 +19,20 @@ def load_model_and_encoder():
 
 model,encoder = load_model_and_encoder()
 
+
+
 @app.post("/predict", response_model=OutputData)
 def predict(inputData: InputData):
     
+    avg_nitrogen_and_ph = return_avg_nitrogen_and_Ph(inputData)
+    avg_rain_temp_humid = return_avg_rain_temp_and_humid(inputData)
     
     input = {
-        "N": [np.mean(inputData.nitrogen)],
-        "temperature": [np.mean(inputData.temperature)],
-        "humidity": [np.mean(inputData.humidity)],
-        "ph": [np.mean(inputData.ph)],
-        "rainfall": [np.mean(inputData.rainfall)]
+        "N": [avg_nitrogen_and_ph["N_kg_per_ha"]],
+        "temperature": [avg_rain_temp_humid["temperature"]],
+        "humidity": [avg_rain_temp_humid["humidity"]],
+        "ph": [avg_nitrogen_and_ph["pH"]],
+        "rainfall": [avg_rain_temp_humid["rainfall"]]
     }
     
     input_df = pd.DataFrame(input)
@@ -49,7 +55,8 @@ def predict(inputData: InputData):
         prediction_class=predicted_class,
         probability=predicted_proba,
         top3=top3
-    )   
+    )
+    
     
     
     

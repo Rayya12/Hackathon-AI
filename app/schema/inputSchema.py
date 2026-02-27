@@ -1,12 +1,9 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List,Any
 
 class InputData(BaseModel):
-    nitrogen : List[float]
-    temperature : List[float]
-    humidity : List[float]
-    ph : List[float]
-    rainfall : List[float]
+    wather : dict[str,dict[str,List[float]]]
+    soil : dict[str,Any]
     
     
     
