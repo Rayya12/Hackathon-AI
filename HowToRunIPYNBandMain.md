@@ -28,4 +28,4 @@
    ```
 
 ## Menjalankan Project
-Buka `main.ipynb` menggunakan Jupyter Notebook atau VS Code, lalu pilih kernel `nama_env` yang sudah dibuat.
+Buka `main.ipynb` menggunakan Jupyter Notebook atau VS Code, lalu pilih kernel `nama_env` yang sudah dibuat. Bila gunakan main.py maka ctrl shift p dan interpeternya masukkan environtmen yang telah di buat. jalankan python/python3 main.py untuk mengaktifkan
