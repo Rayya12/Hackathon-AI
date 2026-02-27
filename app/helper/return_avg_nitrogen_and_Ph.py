@@ -2,7 +2,7 @@ from app.schema.inputSchema import InputData
 
 def return_avg_nitrogen_and_Ph(inputData: InputData):
     
-    if (not inputData.soil):
+    if (not inputData.soil or not inputData.soil["properties"]["layers"][0]["depths"] or not inputData.soil["properties"]["layers"][0]["depths"][0]["values"]["mean"]):
         return {
             "N_kg_per_ha": 50.55,
             "pH": 6.5 

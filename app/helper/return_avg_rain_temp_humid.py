@@ -3,14 +3,14 @@ import numpy as np
 
 def return_avg_rain_temp_and_humid(inputData: InputData):
     
-    if (not inputData.wather):
+    if (not inputData.weather):
         return {
             "temperature": 25.0,
             "humidity": 71.0,
             "rainfall": 103.0
         }
         
-    data = inputData.wather
+    data = inputData.weather
     
     temperature = np.mean(data["daily"]["temperature_2m_mean"])   # List[float] 30 nilai
     rainfall = np.mean(data["daily"]["precipitation_sum"])         # List[float] 30 nilai
