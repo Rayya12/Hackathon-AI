@@ -1,9 +1,9 @@
 from pydantic import BaseModel
-from typing import List,Any
+from typing import List,Any, Optional
 
 class InputData(BaseModel):
-    wather : dict[str,dict[str,List[float]]]
-    soil : dict[str,Any]
+    wather: Optional[Any] = None
+    soil: Optional[Any] = None
     
     
     

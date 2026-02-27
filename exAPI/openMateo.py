@@ -19,15 +19,7 @@ def get_weather_data(lat: float, lon: float):
     
     response = requests.get(url, params=params)
     data = response.json()
-    
-    temperature = data["daily"]["temperature_2m_mean"]   # List[float] 30 nilai
-    rainfall = data["daily"]["precipitation_sum"]         # List[float] 30 nilai
-    humidity = data["hourly"]["relative_humidity_2m"]     # List[float] 720 nilai
-    
-    print(temperature)
-    print(humidity)
-    print(rainfall)
-    
-    return temperature, humidity, rainfall
+    print(data)
+    return data
 
 get_weather_data(-6.917464,107.619125)
