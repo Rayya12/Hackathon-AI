@@ -108,3 +108,35 @@ SHAP
 Open-Meteo API
 SoilGrids API
 
+# 🚀 HOW TO RUN
+
+## Prerequisites
+- [Git](https://git-scm.com/)
+- [Anaconda](https://www.anaconda.com/) atau [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+
+## Installation
+
+1. **Clone repository**
+   ```bash
+   git clone https://github.com/Rayya12/Hackathon-AI.git
+   cd HACKATHON-AI
+   ```
+
+2. **Create the conda environment**
+   ```bash
+   conda create -n venv-name python=3.x # use the version you like
+   ```
+
+3. **Activate the environment**
+   ```bash
+   conda activate nama_env
+   ```
+
+4. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Activate the project
+Open `main.ipynb` Using Jupyter Notebook or VS Code, use kernell `venv-name` That you have created. If you want to use the main.py file, In Vscode press ctrl shift p and select the interpreter/environtment that you have created. In terminal, type python/python3 main.py to activate.
+
